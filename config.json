@@ -1,0 +1,52 @@
+{
+    "_comment": "Customer Satisfaction System — TransformsAI v3.1",
+
+    "streams": [
+  
+    ],
+
+    "_comment_model": "Path to YOLO model; target is the NPU device on RK3588",
+    "person_model": "models/yolov11s-face_rknn_model",
+    "target": "rk3588",
+
+    "_comment_intervals": "All intervals are in seconds",
+    "inference_interval": 300,
+    "datasend_interval": 300,
+    "heartbeat_interval": 30,
+    "multirun_cooldown": 10,
+
+    "_comment_frame": "Capture resolution and JPEG quality for the live capture frames",
+    "frame_width": 640,
+    "frame_height": 360,
+    "frame_jpeg_quality": 80,
+
+    "_comment_send_frame": "Resolution and quality used when uploading the peak-person frame",
+    "frame_send_width": 960,
+    "frame_send_height": 540,
+    "frame_send_jpeg_quality": 80,
+
+    "_comment_detection": "IOU threshold for YOLO NMS; lower values reduce overlapping boxes",
+    "iou_threshold": 0.01,
+
+    "_comment_features": "Feature flags — set to true/false to enable or disable each feature",
+    "demo": false,
+    "draw": true,
+    "show": false,
+    "send_data": true,
+    "livestream": false,
+
+    "_comment_logging": "Logging level: debug | info | warning | error | critical",
+    "logging_level": "debug",
+
+    "_comment_network": "Backend API endpoints and auth",
+    "data_send_url": "https://backend.aihajjservices.com/camera/create-sentiment-analysis/",
+    "heartbeat_url": "https://backend.aihajjservices.com/camera/create-camera-heartbeat/",
+    "X-Secret-Key": "e5oNH8Yhx8eJml4bSxYw",
+
+    "_comment_device": "Orange Pi network identity",
+    "local_ip": "127.0.0.2",
+    "mac_address": "26:c9:c4:74:38:65",
+
+    "_comment_mqtt": "MQTT broker port used by the livestream publisher (only when livestream=true)",
+    "mqtt_port": 1883
+}

@@ -1,0 +1,16 @@
+[Unit]
+Description=Sentiment Analysis System
+After=network.target
+
+[Service]
+Type=simple
+User=orangepi
+WorkingDirectory=/home/orangepi/sentiment-analysis_release
+ExecStart=/bin/bash -c 'source venv/bin/activate && nohup python sentiment.py config.json &'
+Restart=always
+RestartSec=10
+
+KillMode=process-group
+
+[Install]
+WantedBy=multi-user.target
