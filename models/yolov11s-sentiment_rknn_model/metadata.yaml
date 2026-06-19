@@ -1,0 +1,25 @@
+description: Ultralytics YOLO11s model trained on /kaggle/working/data.yaml
+author: Ultralytics
+date: '2026-06-18T08:47:54.449778'
+version: 8.4.70
+license: AGPL-3.0 License (https://ultralytics.com/license)
+docs: https://docs.ultralytics.com
+stride: 32
+task: detect
+batch: 1
+imgsz:
+- 640
+- 640
+names:
+  0: Happy
+  1: Neutral
+  2: Sad
+args:
+  data: null
+  batch: 1
+  name: rk3588
+  fraction: 1.0
+  half: false
+  int8: false
+channels: 3
+end2end: false
