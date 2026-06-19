@@ -2,7 +2,7 @@
     "streams": [
    
     ],
-    "model": "models/yolov11s-face_rknn_model",
+    "model": "models/yolov11s-sentiment_rknn_model",
     "target": "rk3588",
     "multirun_cooldown": 10,
     "inference_interval": 300,
