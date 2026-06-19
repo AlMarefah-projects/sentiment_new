@@ -218,12 +218,7 @@ def run_detection(model: YOLO, config: dict):
 
                 # ---- Data upload -------------------------------------- #
                 if now - stream["last_datasend_time"] >= datasend_interval:
-                    if stream["max_sentiment_count"] == 0:
-                        stream["last_datasend_time"] = now
-                        logger.debug(
-                            f"Stream {stream['sn']}: No persons detected. Skipping data send."
-                        )
-                        continue
+        
 
                     payload = {
                         "sn":               stream["sn"],
@@ -233,7 +228,7 @@ def run_detection(model: YOLO, config: dict):
                     }
 
                     # Always upload the clean (non-annotated) peak frame
-                    upload_frame   = stream["max_person_frame"]
+                    upload_frame   = stream["max_sentiment_frame"]
                     encoded_image  = mat_to_response(
                         upload_frame, frame_send_width, frame_send_quality, timestamp=now
                     )
@@ -248,7 +243,7 @@ def run_detection(model: YOLO, config: dict):
 
                     # Reset peak state for the next interval
                     stream["max_sentiment_count"] = 0
-                    stream["max_person_frame"] = None
+                    stream["max_sentiment_frame"] = None
                     stream["last_datasend_time"] = now
 
                 # ---- Livestream frame push ---------------------------- #
