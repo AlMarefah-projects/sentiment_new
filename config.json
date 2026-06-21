@@ -15,7 +15,7 @@
     "frame_jpeg_quality": 80,
     "frame_send_jpeg_quality": 80,
     "demo": false,
-    "draw": true,
+    "draw": false,
     "show": false,
     "send_data": true,
     "livestream": false,
